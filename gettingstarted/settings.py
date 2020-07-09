@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "hello",
+    "api.apps.ApiConfig",
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
@@ -95,7 +97,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.DjangoModelPermissions',
+    )
+}
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
